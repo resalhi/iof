@@ -10,7 +10,9 @@ echo 'export PATH=$PATH:/usr/local/bin' >> $HOME/.bashrc
 
 source $HOME/.bashrc
 
-kubectl apply -f /vagrant/app1.yaml
-kubectl apply -f /vagrant/app2.yaml
-kubectl apply -f /vagrant/app3.yaml
-kubectl apply -f /vagrant/ingress.yaml
+kubectl apply -n kube-system -f /vagrant/confs/app1.yaml
+kubectl apply -n kube-system -f /vagrant/confs/app2.yaml
+kubectl apply -n kube-system -f /vagrant/confs/app3.yaml
+kubectl apply -n kube-system -f /vagrant/confs/ingress.yaml
+
+sudo apt-get install net-tools -y

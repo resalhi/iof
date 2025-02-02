@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.define "ressalhiS" do |machine|
-    machine.vm.box = "debian/buster64"
+    machine.vm.box = "debian/bullseye64"
     machine.vm.network "private_network", ip: "192.168.56.110"
     machine.vm.hostname = "ressalhiS"
     machine.vm.provider "virtualbox" do |vb|
@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     end
 
     machine.vm.provision "shell", inline: <<-SHELL
-      sh /vagrant/setup.sh
+      sh /vagrant/scripts/setup.sh
     SHELL
   end
 end
